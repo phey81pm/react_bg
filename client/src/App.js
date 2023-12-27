@@ -3,10 +3,10 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-import Home from './components/listings/Home';
-import Create from './components/listings/Create';
-import Edit from './components/listings/Edit';
-import Read from './components/listings/Read';
+import Home from './components/user_details/Home';
+import Create from './components/user_details/Create';
+import Edit from './components/user_details/Edit';
+import Read from './components/user_details/Read';
 
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';

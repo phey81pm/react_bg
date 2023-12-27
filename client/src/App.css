@@ -1,8 +1,9 @@
 
 .bg-login{
-  background:#dfdfdf;
-  background:linear-gradient(45deg,#dec67f 0,#f28dc3 50%,#88aeeb 100%)
+  background:#fefefe;
+  /* background:linear-gradient(45deg,#dec67f 0,#f28dc3 50%,#88aeeb 100%) */
 }
+
  
 .shad{
   box-shadow: 0 0 5px #00000036!important;
