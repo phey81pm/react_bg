@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@500;700&display=swap');
 html,body{
-  background-color: #ffffff!important; 
+  background-color: #f4f4f4!important;
+  background: linear-gradient(#ebe9e9 0,#eeeeee 100%); 
   color:#757575!important;font-weight: 700!important;font-family: 'Lato', sans-serif;
 }
 a{color:#757575!important;font-weight: 700!important;}
