@@ -32,8 +32,8 @@ function Edit() {
     <div className='container-fluid my-4'> 
         <div className='d-flex justify-content-between'> 
             <h4>EDIT USER</h4>
-            <Link to='/' className='btn btn-primary'>Back</Link>
-            <Link to='/create' className='btn btn-primary'>Add</Link>
+            <Link to='/users/' className='btn btn-primary'>Back</Link>
+            <Link to='/users/create' className='btn btn-primary'>Add</Link>
         </div>
      
         {data.map((user) => {

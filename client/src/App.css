@@ -1,18 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@500;700&display=swap');
+html,body{
+  background-color: #ffffff!important; 
+  color:#757575!important;font-weight: 700!important;font-family: 'Lato', sans-serif;
+}
+a{color:#757575!important;font-weight: 700!important;}
+a:hover{color:#7105ff!important;}
+.btn-theme{background-color:#7105ff!important;color:#FFF}
+.btn-theme:hover{background-color:#430397!important;color:#FFF}
 
 .bg-login{
-  background:#fefefe;
-  /* background:linear-gradient(45deg,#dec67f 0,#f28dc3 50%,#88aeeb 100%) */
-}
+  background:#ffffff; 
+} 
 
- 
 .shad{
-  box-shadow: 0 0 5px #00000036!important;
-  border: 0;
+  box-shadow: 0 0 5px #9fdcff!important;
+  border: 1px solid #9fdcff;
 }
 .inp-login{
-  height: 75px;
-  font-size: 18px;
-  border-radius: 10px;
-  color:cadetblue
+  height: 50px;
+  font-size: 15px;
+  border-radius: 50px;
+  color:rgb(100, 2, 192)
 }
 .card{border-radius: 20px;}

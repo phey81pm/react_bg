@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom';
 
-function Home() {
+function View() {
   const [data, setData] = useState([])
     const [deleted, setDeleted] = useState(true)
     useEffect(()=>{
@@ -28,7 +28,7 @@ function Home() {
     <div className='container-fluid my-4'> 
         <div className='d-flex justify-content-between'> 
           <h4>USERS LIST</h4>
-          <Link to='/create' className='btn btn-primary'>Add</Link>
+          <Link to='/users/create' className='btn btn-primary'>Add</Link>
         </div>
       <table className='table table-bordered'>
         <thead>
@@ -36,8 +36,7 @@ function Home() {
             <th>ID</th>
             <th>Full Name</th>
             <th>Email</th>
-            <th>username</th>
-            <th>Password</th>
+            <th>Username</th> 
             <th>Action</th>
           </tr>
         </thead>
@@ -49,11 +48,10 @@ function Home() {
                   <td>{user.id}</td>
                   <td>{user.fullname}</td>
                   <td>{user.email}</td>
-                  <td>{user.username}</td>
-                  <td>{user.password}</td>
+                  <td>{user.username}</td> 
                   <td>
-                    <Link to={`/read/${user.id}`} className='btn btn-light'>View</Link>
-                    <Link to={`/edit/${user.id}`} className='btn btn-primary'>Edit</Link> 
+                    <Link to={`/users/read/${user.id}`} className='btn btn-light'>View</Link>
+                    <Link to={`/users/edit/${user.id}`} className='btn btn-primary'>Edit</Link> 
                     <button onClick={()=>handleDelete(user.id)} className='btn mx-2 btn-danger'>Delete</button> 
                   </td>
                 </tr>
@@ -66,4 +64,4 @@ function Home() {
   )
 }
 
-export default Home
+export default View

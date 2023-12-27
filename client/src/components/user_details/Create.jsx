@@ -28,7 +28,7 @@ function Create() {
         <div className='row'> 
             <div className='d-flex justify-content-between'>
                 <h4>CREATE NEW USER</h4>
-                <Link to='/' className='btn btn-outline-light'>Home</Link> 
+                <Link to='/users/' className='btn btn-outline-light'>View all users</Link> 
             </div>
             <form onSubmit={handleSubmit}>
                 <div className='form-group my-2'>
