@@ -1,9 +1,36 @@
-import React from 'react'
-import {Link} from 'react-router-dom'; 
+import React, {useState} from 'react'
+import {Link} from 'react-router-dom';  
 
-import {GoogleLogin } from '@react-oauth/google';
+import { auth , googleProvider} from "../../config/firebase";
+import { createUserWithEmailAndPassword,signInWithPopup, signOut } from "firebase/auth"; 
 
 const Register = () => {
+  const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    console.log(auth?.currentUser?.email);
+    const signIn = async () => {
+        try {
+            await createUserWithEmailAndPassword(auth, email, password);
+        } catch (err){
+            console.error(err);
+        }
+    };
+    const signInWithGoogle = async () => {
+        try {
+            await signInWithPopup(auth,googleProvider);
+        } catch (err){
+            console.error(err);
+        }
+    };
+    const logOut = async () => {
+        try {
+            await signOut(auth);
+        } catch (err){
+            console.error(err);
+        }
+    };
+
+
   return (
     
     <div className='d-flex justify-content-end'>
@@ -18,16 +45,12 @@ const Register = () => {
               </div>
               <div className='form-group my-3'>
                 <label htmlFor='email'>Email</label>
-                <input type='email' className='form-control inp-login' id='email' placeholder='Enter Email' />
+                <input type='email' className='form-control inp-login' onChange={(e) => setEmail(e.target.value)} placeholder='Enter Email' />
               </div>
               <div className='form-group my-3'>
                 <label htmlFor='password'>Password</label>
-                <input type='password' className='form-control inp-login' id='password' placeholder='Enter Password' />
-              </div>
-              <div className='form-group my-3'>
-                <label htmlFor='confirm_password'>Password</label>
-                <input type='password' className='form-control inp-login' id='confirm_password' placeholder='Confirm Password' />
-              </div>
+                <input type='password' className='form-control inp-login' onChange={(e) => setPassword(e.target.value)} placeholder='Enter Password' />
+              </div> 
               
               <div className='d-flex justify-content-between mt-3'> 
                 <Link to={'/login'} className='btn btn-light'>Already registered? LOGIN</Link>
@@ -36,16 +59,8 @@ const Register = () => {
               </div>
               <small className="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
 
-              <hr className="my-4" />
-              <h2 className="fs-5 fw-bold mb-3">Or use a third-party</h2> 
-
-                  
-              <GoogleLogin
-                  onSuccess={credentialResponse => { console.log(credentialResponse)}}
-                  onError={() => { console.log('Login Failed')}}
-                  useOneTap
-              />
-
+              <hr />
+                <button onClick={signInWithGoogle} className='btn btn-block customBtn'> <img src={process.env.PUBLIC_URL + '/img/google.png'} height="45px"/>  Sign in with Google</button> 
             </form>
           </div>
         </div>

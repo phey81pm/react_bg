@@ -21,9 +21,8 @@ export default function Navbar(){
                         <input type="search" className="form-control" placeholder="Search..." aria-label="Search" />
                     </form>
 
-                    <a  href="./login" className="btn btn-sm mx-2">LOGIN/REGISTER</a>
-                    <a  href="./logout" className="btn btn-sm mx-2">LOGOUT</a>
-                    <div className="dropdown text-end">
+                    <a  href="./login" className="btn btn-sm mx-2">Login/Register</a>
+                     <div className="dropdown text-end">
                         <a href="./" className="d-block text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" className="rounded-circle" />
                         </a>
@@ -32,6 +31,7 @@ export default function Navbar(){
                             <li><a className="dropdown-item" href="./">Inbox</a></li>
                             <li><a className="dropdown-item" href="./">Listings</a></li> 
                             <li><a className="dropdown-item" href="./">Settings</a></li> 
+                            <li><a className="dropdown-item" href="./logout">Logout</a></li> 
                         </ul>
                     </div>
                     
